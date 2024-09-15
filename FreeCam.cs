@@ -11,14 +11,14 @@ namespace Cammy;
 
 public static unsafe class FreeCam
 {
-    public const string ControlsString = "Additional Controls:" +
+    public const string ControlsString = "额外控制：" +
         //"\nMove Keybinds - Move," +
         //"\nJump / Ascend - Up," +
         //"\nDescend - Down," +
-        "\nShift (Hold) - Speed up" +
-        "\nZoom / Controller Zoom (Autorun + Look Up / Down) - Change Speed" +
-        "\nCycle through Enemies (Nearest to Farthest) / Controller Select HUD - Lock" +
-        "\nCycle through Enemies (Farthest to Nearest) / Controller Open Main Menu - Stop";
+        "\nShift键(按住) - 加速" +
+        "\n鼠标缩放按键(默认鼠标滚轮) / 手柄缩放(自动奔跑+向上看/向下看) - 改变速度" +
+        "\n从最近的敌人开始从左至右切换所选目标(默认Tab键) / 手柄选择HUD按键 - 锁定" +
+        "\n从最远的敌人开始从右至左切换所选目标(默认Shift+Tab键) / 手柄打开主菜单按键 - 停止";
 
     public static bool Enabled => gameCamera != null;
     public static Vector3 Position => position;

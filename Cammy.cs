@@ -18,9 +18,9 @@ public class Cammy(IDalamudPluginInterface pluginInterface) : DalamudPlugin<Conf
 
     protected override void ToggleConfig() => PluginUI.IsVisible ^= true;
 
-    private const string cammySubcommands = "/cammy [ help | preset | zoom | fov | spectate | nocollide | freecam ]";
+    private const string cammySubcommands = "/cammy [ 帮助 | 预设 | 焦距 | 视场角 | 观看 | 无碰撞 | 自由相机 ]";
 
-    [PluginCommand("/cammy", HelpMessage = "Opens / closes the config. Additional usage: " + cammySubcommands)]
+    [PluginCommand("/cammy", HelpMessage = "打开/关闭配置。命令语法：" + cammySubcommands)]
     private unsafe void ToggleConfig(string command, string argument)
     {
         if (string.IsNullOrEmpty(argument))
@@ -34,12 +34,12 @@ public class Cammy(IDalamudPluginInterface pluginInterface) : DalamudPlugin<Conf
 
         switch (subcommand.ToLower())
         {
-            case "preset":
+            case "预设":
                 {
                     if (regex.Groups.Count < 2 || string.IsNullOrEmpty(regex.Groups[2].Value))
                     {
                         PresetManager.CurrentPreset = null;
-                        DalamudApi.PrintEcho("Removed preset override.");
+                        DalamudApi.PrintEcho("已移除预设覆盖。");
                         return;
                     }
 
@@ -48,70 +48,70 @@ public class Cammy(IDalamudPluginInterface pluginInterface) : DalamudPlugin<Conf
 
                     if (preset == null)
                     {
-                        DalamudApi.PrintError($"Failed to find preset \"{arg}\"");
+                        DalamudApi.PrintError($"未找到预设 \"{arg}\"");
                         return;
                     }
 
                     PresetManager.CurrentPreset = preset;
-                    DalamudApi.PrintEcho($"Preset set to \"{arg}\"");
+                    DalamudApi.PrintEcho($"预设已设置为 \"{arg}\"");
                     break;
                 }
-            case "zoom":
+            case "焦距":
                 {
                     if (regex.Groups.Count < 2 || !float.TryParse(regex.Groups[2].Value, out var amount))
                     {
-                        DalamudApi.PrintError("Invalid amount.");
+                        DalamudApi.PrintError("无效数值。");
                         return;
                     }
 
                     Common.CameraManager->worldCamera->currentZoom = amount;
                     break;
                 }
-            case "fov":
+            case "视场角":
                 {
                     if (regex.Groups.Count < 2 || !float.TryParse(regex.Groups[2].Value, out var amount))
                     {
-                        DalamudApi.PrintError("Invalid amount.");
+                        DalamudApi.PrintError("为无效数值。");
                         return;
                     }
 
                     Common.CameraManager->worldCamera->currentFoV = amount;
                     break;
                 }
-            case "spectate":
+            case "观看":
                 {
                     Game.EnableSpectating ^= true;
-                    DalamudApi.PrintEcho($"Spectating is now {(Game.EnableSpectating ? "enabled" : "disabled")}!");
+                    DalamudApi.PrintEcho($"观看模式现在{(Game.EnableSpectating ? "已启用" : "已禁用")}!");
                     break;
                 }
-            case "nocollide":
+            case "无碰撞":
                 {
                     Config.EnableCameraNoClippy ^= true;
                     if (!FreeCam.Enabled)
                         Game.cameraNoClippyReplacer.Toggle();
                     Config.Save();
-                    DalamudApi.PrintEcho($"Camera collision is now {(Config.EnableCameraNoClippy ? "disabled" : "enabled")}!");
+                    DalamudApi.PrintEcho($"相机碰撞现在{(Config.EnableCameraNoClippy ? "已禁用" : "已启用")}!");
                     break;
                 }
-            case "freecam":
+            case "自由相机":
                 {
                     FreeCam.Toggle();
                     break;
                 }
-            case "help":
+            case "帮助":
                 {
-                    DalamudApi.PrintEcho("Subcommands:" +
-                        "\npreset <name> - Applies a preset to override automatic presets, specified by name. Use without a name to disable." +
-                        "\nzoom <amount> - Sets the current zoom level." +
-                        "\nfov <amount> - Sets the current FoV level." +
-                        "\nspectate - Toggles the \"Spectate Focus / Soft Target\" option." +
-                        "\nnocollide - Toggles the \"Disable Camera Collision\" option." +
-                        "\nfreecam - Toggles the \"Free Cam\" option.");
+                    DalamudApi.PrintEcho("子命令：" +
+                        "\n预设 <预设名称> - 使用指定名称的预设替代当前镜头设置。不带预设名称来还原镜头设置。" +
+                        "\n焦距 <变焦缩放数值> - 设置当前缩放级别。" +
+                        "\n视场角 <视场角数值> - 设置当前视场角级别。" +
+                        "\n观看 - 开关 \"观看焦点 / 软目标\" 选项。" +
+                        "\n无碰撞 - 开关 \"禁用相机碰撞\" 选项。" +
+                        "\n自由相机 - 开关 \"自由相机\" 选项。");
                     break;
                 }
             default:
                 {
-                    DalamudApi.PrintError("Invalid usage: " + cammySubcommands);
+                    DalamudApi.PrintError("无效的用法：" + cammySubcommands);
                     break;
                 }
         }

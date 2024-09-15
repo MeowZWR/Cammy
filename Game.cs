@@ -55,7 +55,7 @@ public static unsafe class Game
 
             if (((preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.FirstPerson && (camera->mode == 0 || (camera->transition != 0 && camera->controlType <= 2)))
                     || (preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.OutOfCombat && !DalamudApi.Condition[ConditionFlag.InCombat])
-                    || preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.Always)
+                    || preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.任何情况下)
                 && Common.getWorldBonePosition.IsValid && target->DrawObject != null)
             {
                 // Data seems to be cached somehow and the position is slightly behind, but only at this point in the frame
@@ -82,7 +82,7 @@ public static unsafe class Game
             }
             else
             {
-                if (preset.ViewBobMode != CameraConfigPreset.ViewBobSetting.Disabled && (nint)target == DalamudApi.ClientState.LocalPlayer?.Address)
+                if (preset.ViewBobMode != CameraConfigPreset.ViewBobSetting.禁用 && (nint)target == DalamudApi.ClientState.LocalPlayer?.Address)
                 {
                     var defaultLookAtHeightOffset = GetDefaultLookAtHeightOffset();
                     if (defaultLookAtHeightOffset.HasValue)
@@ -125,7 +125,7 @@ public static unsafe class Game
             }
         }
 
-        if (Cammy.Config.DeathCamMode == Configuration.DeathCamSetting.Spectate && DalamudApi.Condition[ConditionFlag.Unconscious] && DalamudApi.TargetManager.Target is { } target)
+        if (Cammy.Config.DeathCamMode == Configuration.DeathCamSetting.观看 && DalamudApi.Condition[ConditionFlag.Unconscious] && DalamudApi.TargetManager.Target is { } target)
         {
             IsSpectating = true;
             return (GameObject*)target.Address;
