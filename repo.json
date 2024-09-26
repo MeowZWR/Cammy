@@ -7,9 +7,13 @@
     "InternalName": "Cammy",
     "RepoUrl": "https://github.com/UnknownX7/Cammy",
     "ApplicableVersion": "any",
-    "CategoryTags": [ "utility" ],
+    "CategoryTags": [
+      "utility"
+    ],
     "DalamudApiLevel": 10,
-    "ImageUrls": [ "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/main/Plugins/Cammy/image1.png" ],
+    "ImageUrls": [
+      "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/main/Plugins/Cammy/image1.png"
+    ],
     "IsHide": false,
     "IsTestingExclusive": false,
     "AssemblyVersion": "2.1.0.9",
