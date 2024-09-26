@@ -35,7 +35,7 @@ jobs:
           $content = $json | ConvertTo-Json
           set-content -Path $path -Value $content
       - name: Archive
-        run: Compress-Archive -Path Cammy/bin/Debug/* -DestinationPath Cammy.zip
+        run: Compress-Archive -Path ./bin/Debug/* -DestinationPath Cammy.zip
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:
