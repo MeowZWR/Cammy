@@ -16,11 +16,11 @@
     ],
     "IsHide": false,
     "IsTestingExclusive": false,
-    "AssemblyVersion": "2.1.0.9",
-    "TestingAssemblyVersion": "2.1.0.9",
-    "DownloadLinkInstall": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.9/Cammy.zip",
-    "DownloadLinkTesting": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.9/Cammy.zip",
-    "DownloadLinkUpdate": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.9/Cammy.zip",
+    "AssemblyVersion": "2.1.0.10",
+    "TestingAssemblyVersion": "2.1.0.10",
+    "DownloadLinkInstall": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.10/Cammy.zip",
+    "DownloadLinkTesting": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.10/Cammy.zip",
+    "DownloadLinkUpdate": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.10/Cammy.zip",
     "IconUrl": "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/global/Plugins/Cammy/icon.png",
     "Changelog": ""
   }
