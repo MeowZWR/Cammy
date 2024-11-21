@@ -10,7 +10,8 @@
     "CategoryTags": [
       "utility"
     ],
-    "DalamudApiLevel": 10,
+    "DalamudApiLevel": 11,
+    "TestingDalamudApiLevel": 11,
     "ImageUrls": [
       "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/main/Plugins/Cammy/image1.png"
     ],
