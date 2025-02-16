@@ -5,7 +5,7 @@
     "Punchline": "一个简单的游戏相机设置修改器",
     "Description": "一个简单的相机修改器，可以更改各种游戏默认值，比如缩放和视角。\n这会破解游戏缩放限制，如果你不清楚会造成什么后果，不要安装。",
     "InternalName": "Cammy",
-    "RepoUrl": "https://github.com/UnknownX7/Cammy",
+    "RepoUrl": "https://github.com/MeowZWR/Cammy",
     "ApplicableVersion": "any",
     "CategoryTags": [
       "utility"
