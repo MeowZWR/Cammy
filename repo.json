@@ -13,7 +13,7 @@
     "DalamudApiLevel": 11,
     "TestingDalamudApiLevel": 11,
     "ImageUrls": [
-      "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/main/Plugins/Cammy/image1.png"
+      "https://static.meowrs.com/Plugins/Cammy/image1.png"
     ],
     "IsHide": false,
     "IsTestingExclusive": false,
@@ -22,7 +22,7 @@
     "DownloadLinkInstall": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.10/Cammy.zip",
     "DownloadLinkTesting": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.10/Cammy.zip",
     "DownloadLinkUpdate": "https://meowrs.com/https://github.com/MeowZWR/Cammy/releases/download/2.1.0.10/Cammy.zip",
-    "IconUrl": "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/global/Plugins/Cammy/icon.png",
+    "IconUrl": "https://static.meowrs.com/Plugins/Cammy/icon.png",
     "Changelog": ""
   }
 ]
