@@ -1,8 +1,8 @@
 using System;
 using System.Numerics;
+using Dalamud.Bindings.ImGui;
 using Dalamud.Interface;
 using Dalamud.Interface.Utility;
-using ImGuiNET;
 
 namespace Cammy;
 
@@ -96,7 +96,7 @@ public static class PluginUI
         ImGui.SameLine();
 
         ImGui.Button(FontAwesomeIcon.TimesCircle.ToIconString());
-        if (hasSelectedPreset && ImGui.BeginPopupContextItem(null, ImGuiPopupFlags.MouseButtonLeft))
+        if (hasSelectedPreset && ImGui.BeginPopupContextItem(ImU8String.Empty, ImGuiPopupFlags.MouseButtonLeft))
         {
             if (ImGui.Selectable(FontAwesomeIcon.TrashAlt.ToIconString()))
             {
@@ -230,7 +230,7 @@ public static class PluginUI
 
         ImGui.Spacing();
 
-        ImGui.Columns(3, null, false);
+        ImGui.Columns(3, ImU8String.Empty, false);
         if (ImGui.Checkbox("启动焦距调节##Use", ref preset.UseStartZoom))
             Cammy.Config.Save();
         ImGui.NextColumn();
@@ -239,7 +239,7 @@ public static class PluginUI
         if (preset.UseStartZoom || preset.UseStartFoV)
         {
             ImGui.NextColumn();
-            if (ImGui.Checkbox("Only on Login", ref preset.UseStartOnLogin))
+            if (ImGui.Checkbox("仅在登录时启用", ref preset.UseStartOnLogin))
                 Cammy.Config.Save();
         }
         ImGui.Columns(1);
